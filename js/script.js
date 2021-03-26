@@ -107,7 +107,21 @@ function exercise2() {
         TEAM["fouls"] = genRandomValue(0,10);
     }
 
-    console.log(TEAMS);
+    // Usando la destrutturazione creiamo un nuovo array 
+    // i cui elementi contengono solo nomi e falli subiti 
+    // e stampiamo tutto in console.
+
+    const UPDATE_TEAMS = [];
+    for (let i=0; i<TEAMS.length; i++) {
+
+        const TEAM = TEAMS[i];
+        let { name, fouls } = TEAM;
+        let newTeamObject = { name, fouls };
+
+        UPDATE_TEAMS.push(newTeamObject);
+    }
+
+    console.log(UPDATE_TEAMS)
 }
 
 function init() {
